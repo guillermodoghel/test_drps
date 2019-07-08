@@ -60,7 +60,7 @@
         <!-- Product Pricing -->
         <div class="product-price">
           <span>199$</span>
-          <a href="#" class="cart-btn">Comprar</a>
+          <a href="#" class="cart-btn" onclick="hola()">Comprar</a>
         </div>
       </div>
     </main>
@@ -68,5 +68,18 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <script src="script.js" charset="utf-8"></script>
+    <script>
+      function hola(){
+        var xhr = new XMLHttpRequest(); 
+        var url = 'https://script.google.com/macros/s/AKfycbwOfFbFmsMHT2WOmUboC-UoKwIIavR9CW2L97ceoU746Gmobqs/exec';
+        xhr.open('GET', url);
+        xhr.setRequestHeader("Access-Control-Allow-Origin","*");
+        xhr.setRequestHeader("Origin","github.io");
+        xhr.onreadystatechange = function (data) {
+            console.log(xhr.responseText);
+        }
+        xhr.send();
+      }
+    </script>
   </body>
 </html>
